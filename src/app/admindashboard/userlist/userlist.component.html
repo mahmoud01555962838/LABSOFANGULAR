@@ -1,0 +1,29 @@
+<ng-container>
+  <h2 class="text-center">{{ "body.userlist" | transloco }}</h2>
+  <div class="container">
+    <div class="card-table">
+      <div class="cart-product">
+        <table class="table table-responsive">
+          <thead>
+            <tr>
+              <th>Id</th>
+              <th>{{ "body.name" | transloco }}</th>
+              <th>{{ "body.surname" | transloco }}</th>
+              <th>{{ "body.email" | transloco }}</th>
+              <th>{{ "body.isadmin" | transloco }}</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let user of userList">
+              <td>{{ user.id }}</td>
+              <td>{{ user.user.name }}</td>
+              <td>{{ user.user.surname }}</td>
+              <td>{{ user.user.email }}</td>
+              <td>{{ user.user.isAdmin }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</ng-container>

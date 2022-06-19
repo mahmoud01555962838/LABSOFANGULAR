@@ -1,0 +1,51 @@
+<ng-container>
+  <h2 class="text-center">{{ "body.productlist" | transloco }}</h2>
+  <div class="container">
+    <div class="card-table">
+      <div class="cart-product">
+        <table class="table table-responsive">
+          <thead>
+            <tr>
+              <th>{{ "body.productname" | transloco }}</th>
+              <th>{{ "body.img" | transloco }}</th>
+              <th>{{ "body.description" | transloco }}</th>
+              <th>{{ "body.price" | transloco }}</th>
+              <th>{{ "body.update" | transloco }}</th>
+              <th>{{ "body.delete" | transloco }}</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let product of productList">
+              <td>{{ product.name }}</td>
+              <td>
+                <img
+                  class="img-fluid product-img"
+                  src="../../../assets/img/{{ product.productImg }}"
+                  alt=""
+                />
+              </td>
+              <td>{{ product.description }}</td>
+              <td>${{ product.price }}</td>
+              <td>
+                <button
+                  class="btn btn-info"
+                  [routerLink]="['/admindashboard/updateproduct/', product.id]"
+                >
+                  <i class="fa-solid fa-pen-to-square"></i>
+                </button>
+              </td>
+              <td>
+                <button
+                  class="btn btn-danger"
+                  (click)="deleteProduct(product.id)"
+                >
+                  <i class="fas fa-trash-alt"></i>
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</ng-container>

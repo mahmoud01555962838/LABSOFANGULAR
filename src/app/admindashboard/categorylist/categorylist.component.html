@@ -1,0 +1,23 @@
+<ng-container>
+  <h2 class="text-center">{{ "body.catlist" | transloco }}</h2>
+  <div class="container">
+    <div class="card-table">
+      <div class="cart-product">
+        <table class="table table-responsive">
+          <thead>
+            <tr>
+              <th>Id</th>
+              <th>{{ "body.categoryname" | transloco }}</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let category of categoryList">
+              <td>{{ category.id }}</td>
+              <td>{{ category.categoryName }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</ng-container>

@@ -1,0 +1,109 @@
+<div class="special">
+  <section id="content">
+    <form [formGroup]="registerForm" (submit)="onSubmit()">
+      <h1>Register</h1>
+      <div>
+        <input type="text" placeholder="Name" [formControlName]="'name'" />
+      </div>
+      <span
+        class="text-danger"
+        *ngIf="
+          registerForm.get('name')!.hasError('required') &&
+          registerForm.get('name').touched
+        "
+        >Name is required
+      </span>
+      <div>
+        <input
+          type="text"
+          placeholder="Surname"
+          [formControlName]="'surname'"
+        />
+      </div>
+      <span
+        class="text-danger"
+        *ngIf="
+          registerForm.get('surname')!.hasError('required') &&
+          registerForm.get('surname').touched
+        "
+        >Surname is required
+      </span>
+
+      <div>
+        <input type="text" placeholder="Email" [formControlName]="'email'" />
+      </div>
+      <span
+        class="text-danger"
+        *ngIf="
+          registerForm.get('email')!.hasError('required') &&
+          registerForm.get('email').touched
+        "
+        >Email is required
+      </span>
+      <span
+        class="text-danger"
+        *ngIf="
+          registerForm.get('email')!.hasError('email') &&
+          registerForm.get('email').touched
+        "
+        >Please enter an email address.
+      </span>
+
+      <div>
+        <input
+          type="password"
+          placeholder="Password"
+          [formControlName]="'password'"
+        />
+      </div>
+      <span
+        class="text-danger"
+        *ngIf="
+          registerForm.get('password')!.hasError('required') &&
+          registerForm.get('password').touched
+        "
+        >password is required
+      </span>
+      <span
+        class="text-danger"
+        *ngIf="
+          registerForm.get('password')!.hasError('pattern') &&
+          registerForm.get('password').touched
+        "
+        >Your password must contain ('a-z' , 'A-Z' , '0-9') and must be a
+        minimum of 6 digits.
+      </span>
+      <div>
+        <input
+          type="password"
+          placeholder="rePassword"
+          [formControlName]="'rePassword'"
+        />
+      </div>
+      <div>
+        <span
+          class="text-danger"
+          *ngIf="
+            registerForm.get('rePassword')!.hasError('required') &&
+            registerForm.get('rePassword').touched
+          "
+          >rePassword is required
+        </span>
+        <br />
+        <span
+          class="text-danger"
+          *ngIf="passwordWarning && registerForm.get('rePassword').touched"
+        >
+          {{ passwordWarning }}
+        </span>
+        <br />
+        <input type="submit" value="Register" />
+        <a routerLink="/login">Do you have account?</a>
+      </div>
+    </form>
+    <!-- form -->
+  </section>
+  <!-- content -->
+</div>
+<!-- container -->
+<div style="margin-top: 130px"></div>
