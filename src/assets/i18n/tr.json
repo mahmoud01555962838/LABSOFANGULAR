@@ -1,0 +1,65 @@
+{
+  "header": {
+    "home": "الصفحة الرئيسية",
+    "about": "عنا",
+    "contact": "تواصل معنا",
+    "admin": "الأدمن",
+    "add": "أضف",
+    "productlist": "قائمة المنتجات",
+    "userlist": "قائمة المستخدمين",
+    "categorylist": "الفئات",
+    "gotodash": "لوحة التحكم",
+    "search": "بحث",
+    "gotocart": "عربة التسوق",
+    "logout": "الخروج",
+    "backtosite": "العودة",
+    "title": "العنوان",
+    "lang": "AR"
+  },
+  "sidebar": {
+    "catlist": "قائمة عربة التسوق",
+    "allproduct": "كل المنتجات"
+  },
+  "body": {
+    "view": "عرض",
+    "addtocart": "أضف للعربة",
+    "productname": "اسم المنتج",
+    "productlist": "قائمة المنتجات",
+    "catlist": "قائمة عربة التسوق",
+    "categoryname": "اسم الفئة",
+    "img": "صورة",
+    "description": "وصف",
+    "price": "السعر",
+    "showing": "عرض",
+    "review": "مراجعة",
+    "update": "تحديث",
+    "delete": "حذف",
+    "name": "الاسم",
+    "surname": "لقب",
+    "email": "البريد الإلكتروني",
+    "isadmin": "هل أدمن؟",
+    "userlist": "قائمة المستخدمين",
+    "total": "المجموع",
+    "buy": "شراء"
+  },
+  "crud": {
+    "addnew": "إضافة جديد",
+    "namereq": "طلب اسم",
+    "min5": "الحد الأدني 5",
+    "catidreq": "طلب الرقم التسلسلي للفئة",
+    "productname": "اسم المنتج",
+    "catid": "الرقم التسلسلي للفئة",
+    "description": "الوصف",
+    "descriptionreq": "طلب الوصف",
+    "min15": "الحد الدنى 15",
+    "price": "السعر",
+    "pricereq": "طلب السعر",
+    "save": "حفظ",
+    "img": "الصورة"
+  },
+  "cart": {
+    "empty": "فارغة",
+    "shopnow": "التسوق الآن",
+    "mycart": "عربتي"
+  }
+}

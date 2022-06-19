@@ -1,0 +1,105 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark" *ngIf="isUserLoggedIn">
+  <div class="container-fluid">
+    <a class="navbar-brand" routerLink="/products">My store</a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a
+            class="nav-link active"
+            aria-current="page"
+            routerLink="/products"
+            >{{ "header.home" | transloco }}</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled-link">{{ "header.about" | transloco }}</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link disabled-link">{{
+            "header.contact" | transloco
+          }}</a>
+        </li>
+        <li class="nav-item dropdown" *ngIf="isAdmin == true">
+          <a
+            class="nav-link dropdown-toggle"
+            id="navbarDropdown"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            {{ "header.admin" | transloco }}
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li>
+              <a
+                class="dropdown-item"
+                routerLink="/admindashboard/addproduct"
+                >{{ "header.add" | transloco }}</a
+              >
+            </li>
+            <li>
+              <a
+                class="dropdown-item"
+                routerLink="/admindashboard/productlist"
+                >{{ "header.productlist" | transloco }}</a
+              >
+            </li>
+            <li>
+              <a class="dropdown-item" routerLink="/admindashboard/userlist">{{
+                "header.userlist" | transloco
+              }}</a>
+            </li>
+            <div class="dropdown-divider"></div>
+            <li>
+              <a
+                class="dropdown-item"
+                routerLink="/admindashboard/productlist"
+                >{{ "header.gotodash" | transloco }}</a
+              >
+            </li>
+          </ul>
+        </li>
+        <div class="form-group">
+          <input
+            type="text"
+            class="form-control"
+            [(ngModel)]="searchText"
+            (keyup)="search($event)"
+            placeholder="search"
+          />
+        </div>
+      </ul>
+    </div>
+
+    <button class="btn btn-warning" (click)="onTranslate()">
+      {{ "header.lang" | transloco }}
+      &nbsp;
+      <i class="fa-solid fa-language cart-size"></i>
+    </button>
+
+    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+    <a routerLink="/products/cart" class="btn btn-info">
+      <i class="fas fa-cart-plus cart-size"></i>
+      <div class="badge bg-danger badge-size">
+        {{ cartCount }}
+      </div>
+      &nbsp;{{ "header.gotocart" | transloco }}
+    </a>
+    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+    <button class="btn btn-danger" (click)="onLogOut()">
+      {{ "header.logout" | transloco }}
+    </button>
+  </div>
+</nav>

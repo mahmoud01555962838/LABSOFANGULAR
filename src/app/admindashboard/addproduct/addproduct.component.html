@@ -1,0 +1,101 @@
+<h2 class="bg-light mb-2 text-center">{{ "crud.addnew" | transloco }}</h2>
+<form class="login-form" [formGroup]="addProductForm" (submit)="onSubmit()">
+  <div class="form-row">
+    <div class="col-md-6 mb-3">
+      <label for="validationServer01">{{
+        "crud.productname" | transloco
+      }}</label>
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Enter Product Name"
+        [formControlName]="'name'"
+      />
+    </div>
+    <span
+      class="text-danger"
+      *ngIf="
+        addProductForm.get('name')!.hasError('required') &&
+        addProductForm.get('name').touched
+      "
+      >{{ "crud.namereq" | transloco }}
+    </span>
+    <span
+      class="text-danger"
+      *ngIf="
+        addProductForm.get('name')!.hasError('minlength') &&
+        addProductForm.get('name').touched
+      "
+      >{{ "crud.min5" | transloco }}
+    </span>
+    <div class="col-md-6 mb-3">
+      <label for="validationServer02">{{ "crud.catid" | transloco }}</label>
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Enter Category ID"
+        [formControlName]="'categoryId'"
+      />
+    </div>
+    <span
+      class="text-danger"
+      *ngIf="
+        addProductForm.get('categoryId')!.hasError('required') &&
+        addProductForm.get('categoryId').touched
+      "
+      >{{ "crud.catidreq" | transloco }}
+    </span>
+  </div>
+
+  <div class="form-row">
+    <div class="col-md-6 mb-3">
+      <label for="validationServer03">{{
+        "crud.description" | transloco
+      }}</label>
+      <textarea
+        type="text"
+        class="form-control"
+        [formControlName]="'description'"
+      >
+      </textarea>
+    </div>
+    <span
+      class="text-danger"
+      *ngIf="
+        addProductForm.get('description')!.hasError('required') &&
+        addProductForm.get('description').touched
+      "
+      >{{ "crud.descriptionreq" | transloco }}
+    </span>
+    <span
+      class="text-danger"
+      *ngIf="
+        addProductForm.get('description')!.hasError('minlength') &&
+        addProductForm.get('name').touched
+      "
+      >{{ "crud.min15" | transloco }}
+    </span>
+  </div>
+  <div class="form-row">
+    <div class="col-md-6 mb-3">
+      <label for="validationServer01">{{ "crud.price" | transloco }}</label>
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Enter Product Price"
+        [formControlName]="'price'"
+      />
+    </div>
+    <span
+      class="text-danger"
+      *ngIf="
+        addProductForm.get('price')!.hasError('required') &&
+        addProductForm.get('price').touched
+      "
+      >{{ "crud.pricereq" | transloco }}
+    </span>
+  </div>
+  <button class="btn btn-primary" type="submit">
+    {{ "crud.save" | transloco }}
+  </button>
+</form>

@@ -1,0 +1,65 @@
+{
+  "header": {
+    "home": "Home",
+    "about": "About",
+    "contact": "Contact",
+    "admin": "Admin Options",
+    "add": "Add Product",
+    "productlist": "Product List",
+    "userlist": "User List",
+    "categorylist": "Category List",
+    "gotodash": "Go to Dashboard",
+    "search": "Search",
+    "gotocart": "Go to Cart",
+    "logout": "Log Out",
+    "backtosite": "Back to Site",
+    "title": "Orion Shop Admin Dashboard",
+    "lang": "EN"
+  },
+  "sidebar": {
+    "catlist": "Category List",
+    "allproduct": "View All Product"
+  },
+  "body": {
+    "view": "Change View",
+    "addtocart": "Add to Cart",
+    "productname": "Product Name",
+    "productlist": "Product List",
+    "catlist": "Category List",
+    "categoryname": "Category Name",
+    "img": "Product Image",
+    "description": "Description",
+    "price": "Price",
+    "showing": "Results By Category",
+    "review": "Leave a Review",
+    "update": "Update Product",
+    "delete": "Delete Product",
+    "name": "Name",
+    "surname": "Surname",
+    "email": "Email",
+    "isadmin": "Admin Authority",
+    "userlist": "User List",
+    "total": "Total Amount",
+    "buy": "Buy"
+  },
+  "crud": {
+    "addnew": "Add New Product",
+    "namereq": "Product Name is Required",
+    "min5": "You must enter at least 5 characters",
+    "catidreq": "Category ID is Required",
+    "productname": "Product Name",
+    "catid": "Category ID",
+    "description": "Description",
+    "descriptionreq": "Description is Required",
+    "min15": "You must enter at least 15 characters",
+    "price": "Product Price",
+    "pricereq": "Price is Required",
+    "save": "Save",
+    "img": "Product Image"
+  },
+  "cart": {
+    "empty": "Your Cart is Empty",
+    "shopnow": "Shop Now",
+    "mycart": "My Cart"
+  }
+}

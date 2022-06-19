@@ -1,0 +1,98 @@
+<h2 class="bg-light mb-2 text-center">{{ "body.update" | transloco }}</h2>
+<form class="login-form" [formGroup]="updateProductForm" (submit)="onSubmit()">
+  <div class="form-row">
+    <div class="col-md-6 mb-3">
+      <label for="validationServer01">{{
+        "crud.productname" | transloco
+      }}</label>
+      <input type="text" class="form-control" [formControlName]="'name'" />
+    </div>
+    <span
+      class="text-danger"
+      *ngIf="
+        updateProductForm.get('name')!.hasError('required') &&
+        updateProductForm.get('name').touched
+      "
+      >{{ "crud.namereq" | transloco }}
+    </span>
+    <span
+      class="text-danger"
+      *ngIf="
+        updateProductForm.get('name')!.hasError('minlength') &&
+        updateProductForm.get('name').touched
+      "
+      >{{ "crud.min5" | transloco }}
+    </span>
+    <div class="col-md-6 mb-3">
+      <label for="validationServer02">{{ "crud.catid" | transloco }}</label>
+      <input
+        type="text"
+        class="form-control"
+        [formControlName]="'categoryId'"
+      />
+    </div>
+    <span
+      class="text-danger"
+      *ngIf="
+        updateProductForm.get('categoryId')!.hasError('required') &&
+        updateProductForm.get('categoryId').touched
+      "
+      >{{ "crud.catidreq" | transloco }}
+    </span>
+    <div class="col-md-6 mb-3">
+      <label for="validationServer02">{{ "crud.img" | transloco }}</label>
+      <input
+        type="text"
+        class="form-control"
+        [formControlName]="'productImg'"
+      />
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="col-md-6 mb-3">
+      <label for="validationServer03">{{
+        "crud.description" | transloco
+      }}</label>
+      <textarea
+        type="text"
+        class="form-control"
+        [formControlName]="'description'"
+      >
+      </textarea>
+    </div>
+    <span
+      class="text-danger"
+      *ngIf="
+        updateProductForm.get('description')!.hasError('required') &&
+        updateProductForm.get('description').touched
+      "
+      >{{ "crud.descriptionreq" | transloco }}
+    </span>
+    <span
+      class="text-danger"
+      *ngIf="
+        updateProductForm.get('description')!.hasError('minlength') &&
+        updateProductForm.get('name').touched
+      "
+      >{{ "crud.min15" | transloco }}
+    </span>
+  </div>
+  <div class="form-row">
+    <div class="col-md-6 mb-3">
+      <label for="validationServer01">{{ "crud.price" | transloco }}</label>
+      <input type="text" class="form-control" [formControlName]="'price'" />
+    </div>
+    <span
+      class="text-danger"
+      *ngIf="
+        updateProductForm.get('price')!.hasError('required') &&
+        updateProductForm.get('price').touched
+      "
+      >{{ "crud.pricereq" | transloco }}
+    </span>
+  </div>
+  <button class="btn btn-primary" type="submit">
+    {{ "crud.save" | transloco }}
+  </button>
+</form>

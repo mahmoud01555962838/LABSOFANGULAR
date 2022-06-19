@@ -1,0 +1,75 @@
+<h2>{{ "body.showing" | transloco }}</h2>
+
+<div class="row" *ngIf="productList && viewStatus">
+  <div
+    class="col-lg-4 col-md-6 mb-4"
+    *ngFor="let product of productList | filter: searchText:'name'"
+  >
+    <div class="card h-100">
+      <a (click)="onViewProduct(product.id)"
+        ><img
+          class="card-img-top"
+          src="../../../assets/img/{{ product.productImg }}"
+          alt=""
+      /></a>
+      <div class="card-body">
+        <h4 class="card-title">
+          <button class="btn-vbc" (click)="onViewProduct(product.id)">
+            {{ product.name }}
+          </button>
+        </h4>
+        <h5>$ {{ product.price }}</h5>
+        <p class="card-text">
+          {{ product.description }}
+        </p>
+      </div>
+      <div class="card-footer">
+        <small class="text-muted">&#9733;&#9733;&#9733;&#9733;&#9734;</small>
+      </div>
+      <a class="btn btn-info" (click)="addtoCart(product.id)">{{
+        "body.addtocart" | transloco
+      }}</a>
+    </div>
+  </div>
+</div>
+
+<ng-container *ngIf="!viewStatus">
+  <div class="container">
+    <div class="card-table-table">
+      <div class="cart-product">
+        <table class="table table-responsive">
+          <thead>
+            <tr>
+              <th>{{ "body.productname" | transloco }}</th>
+              <th>{{ "body.img" | transloco }}</th>
+              <th>{{ "body.description" | transloco }}</th>
+              <th>{{ "body.price" | transloco }}</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let product of productList | filter: searchText:'name'">
+              <a routerLink="view-product/{{ product.id }}">{{
+                product.name
+              }}</a>
+              <td>
+                <a routerLink="view-product/{{ product.id }}">
+                  <img
+                    class="img-fluid product-img-table"
+                    src="../../../assets/img/{{ product.productImg }}"
+                    alt=""
+                  />
+                </a>
+              </td>
+              <td>{{ product.description }}</td>
+              <td>${{ product.price }}</td>
+              <a class="btn btn-info" (click)="addtoCart(product.id)">
+                <i class="fas fa-cart-plus cart-size"></i> Add to Cart
+              </a>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</ng-container>
